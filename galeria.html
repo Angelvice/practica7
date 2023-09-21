@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#C3D6A9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Galería de Pasteles</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/j.jpg" class="card-img-top" alt="Pastel 1">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/n.jpg" class="card-img-top" alt="Pastel 2">
+                </div><br>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/p.jpg" class="card-img-top" alt="Pastel 4">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/ca.JPG" class="card-img-top" alt="Pastel 5">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/CREMA.jpg" class="card-img-top" alt="Pastel 3">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/v.jpg" class="card-img-top" alt="Pastel 3">
+                </div><br>
+                
+    <!-- JavaScript para la funcionalidad de la galería -->
+    <script>
+    // Obtén todas las imágenes
+    const images = document.querySelectorAll('.card-img-top');
+
+    // Agrega un evento clic a cada imagen
+    images.forEach(image => {
+        image.addEventListener('click', function () {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <img src="${this.src}" alt="${this.alt}" class="img-fluid">
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        });
+    });
+
+    // Cierra el modal al hacer clic fuera de la imagen
+    document.body.addEventListener('click', function (e) {
+        if (e.target.classList.contains('modal')) {
+            document.body.removeChild(e.target);
+        }
+    });
+</script>
+<center> <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Regresar</button></center>
+</body>
+</html>
